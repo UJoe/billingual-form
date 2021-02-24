@@ -1,0 +1,83 @@
+#formDiv {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background-color: lightgoldenrodyellow;
+  border-radius: 20px;
+  box-shadow: 3px 3px 5px blue;
+}
+
+#formDiv form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 15px;
+  margin: 10px;
+}
+
+h3,
+h4 {
+  text-align: center;
+  color: blue;
+  margin: 10px;
+}
+
+.formPart {
+  float: left;
+  margin: 10px 0;
+}
+
+.formPart label {
+  margin: 5px;
+}
+
+.formPart input {
+  height: 15px;
+  border-radius: 5px;
+  float: right;
+  margin: 0 10px;
+  width: 120px;
+}
+
+.bigger {
+  transform: scale(1.1);
+  margin: 5px 15px;
+}
+
+#submitBtn:disabled {
+  background-color: green;
+  color: black;
+  opacity: 0.6;
+}
+
+.correct {
+  border: solid 2px lime;
+}
+
+.incorrect {
+  border: dotted 2px red;
+}
+
+#genderMes {
+  font-size: 13px;
+  font-style: italic;
+  color: red;
+  margin: 5px 10px;
+  background-image: linear-gradient(
+    to right,
+    lightgoldenrodyellow,
+    yellow,
+    lightgoldenrodyellow
+  );
+}
+
+.errorDiv {
+  display: inline-block;
+  margin: 5px;
+  color: red;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
