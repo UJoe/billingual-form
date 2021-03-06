@@ -21,7 +21,7 @@ function message(id, textHu, textEn, vanish) {
 }
 
 function registrate() {
-  let userName = document.getElementById("user").value;
+  let userName = document.getElementById("user").value; //Ezt a Login résznél kapja meg, ha oylan felhasználót kap meg, aki nincs az adatbázisban
   root.innerHTML = `
   <div id="formDiv">
     <h3 id="formTitle"></h3>
@@ -71,30 +71,40 @@ function registrate() {
   </div>
   `;
 
-  message(
-    "formTitle",
-    "Üdvözlünk, Harcos! Mesélj egy kicsit magadról!",
-    "Welcome, Warrior! Please tell us more about yourself."
-  );
-  message("nameLabel", "Felhasználó:", "User:");
-  message("pw1label", "Jelszó:", "Password:");
-  message("pw2label", "Jelszó:", "Password:");
-  message("genderLabel", "Nemed:", "Gender:");
-  message(
-    "genderMes",
-    "A nemed a játék típusát is meghatározza!",
-    "Your gender determines the type of game, too!"
-  );
-  message("maleSex", "férfi", "male");
-  message("femaleSex", "nő", "female");
-  message("langLabel", "Nyelv:", "Language:");
-  message("huLang", "magyar", "Hungarian");
-  message("enLang", "angol", "English");
-  message("birthLabel", "Születési év:", "Year of Birth:");
-  message("heightLabel", "Magasság (cm):", "Height (cm):");
-  message("weightLabel", "Súly (kg):", "Weight (kg):");
-  message("submitBtn", "Regisztrálok", "Register");
-  message("cancelBtn", "Mégsem", "Cancel");
+  //Ezek a feliratok, amit egy nagyobb (JSON) adatbázisból kap meg, de az egyszerűség kedvéért itt beraktam csak ezt a részt
+  const prints = {
+    formDiv: [
+      [
+        "formTitle",
+        "Üdvözlünk, Harcos! Mesélj egy kicsit magadról!",
+        "Welcome, Warrior! Please tell us more about yourself.",
+        false,
+      ],
+      ["nameLabel", "Felhasználó:", "User:", false],
+      ["pw1label", "Jelszó:", "Password:", false],
+      ["pw2label", "Jelszó:", "Password:", false],
+      ["genderLabel", "Nemed:", "Gender:", false],
+      [
+        "genderMes",
+        "A nemed a játék típusát is meghatározza!",
+        "Your gender determines the type of game, too!",
+        false,
+      ],
+      ["maleSex", "férfi", "male", false],
+      ["femaleSex", "nő", "female", false],
+      ["langLabel", "Nyelv:", "Language:", false],
+      ["huLang", "magyar", "Hungarian", false],
+      ["enLang", "angol", "English", false],
+      ["birthLabel", "Születési év:", "Year of Birth:", false],
+      ["heightLabel", "Magasság (cm):", "Height (cm):", false],
+      ["weightLabel", "Súly (kg):", "Weight (kg):", false],
+      ["submitBtn", "Regisztrálok", "Register", false],
+      ["cancelBtn", "Mégsem", "Cancel", false],
+    ],
+  };
+  prints.formDiv.map((text) => {
+    message(text[0], text[1], text[2], text[3]);
+  }); //Ez írja ki
   if (lang === "en") {
     document.getElementById("enLang").selected = true;
   }
